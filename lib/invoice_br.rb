@@ -2,7 +2,15 @@
 require 'invoice_br/version'
 
 # Dependences
+require "active_support"
+require 'active_support/core_ext'
 require "slim"
+require 'i18n'
+require 'dry-struct'
+require 'dry-validation'
+
+
+require 'invoice_br/core'
 
 # Copyright (C) 2018 Bruno M. Mergen
 #
@@ -23,4 +31,7 @@ module InvoiceBr
       yield self
     end
   end
+
+  I18n.load_path += Dir[InvoiceBr.root+'/config/locales/**/*.{rb,yml}']
+
 end
