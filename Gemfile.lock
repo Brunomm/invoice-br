@@ -108,6 +108,9 @@ GEM
       rspec-mocks (~> 3.7.0)
     rspec-core (3.7.1)
       rspec-support (~> 3.7.0)
+    rspec-dry-struct (0.3.0)
+      dry-struct
+      rspec
     rspec-expectations (3.7.0)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.7.0)
@@ -138,6 +141,7 @@ DEPENDENCIES
   invoice-br!
   pry (~> 0.10)
   rspec
+  rspec-dry-struct
 
 BUNDLED WITH
    1.16.1

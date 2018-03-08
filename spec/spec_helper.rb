@@ -3,7 +3,7 @@ require 'bundler/setup'
 Bundler.require(:default, :test)
 
 require 'invoice_br'
-
+require 'rspec/dry/struct'
 require 'ffaker'
 
 Dir[InvoiceBr.root + ('/spec/support/**/*.rb')].each { |f| require f }
