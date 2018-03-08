@@ -1,0 +1,5 @@
+pt-BR:
+  invoice_br:
+    model:
+      person:
+        name: nome

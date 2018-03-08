@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+# encoding: utf-8
+
 module InvoiceBr
   module Version
     MAJOR = 0 #inclui alterações de API e pode quebrar compatibilidade com versões anteriores
