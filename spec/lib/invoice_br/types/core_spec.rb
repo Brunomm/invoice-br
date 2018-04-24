@@ -10,4 +10,10 @@ describe 'Types' do
     end
   end
 
+  describe 'UnaccentedText' do
+    it 'removes accents of text' do
+      expect( InvoiceBr::Types::UnaccentedText['Áá éÊêẽ Iíì óôõò úU'] ).to eq('Aa eEe? Iii oooo uU')
+    end
+  end
+
 end

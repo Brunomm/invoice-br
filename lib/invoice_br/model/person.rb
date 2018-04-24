@@ -3,11 +3,10 @@
 
 require 'invoice_br/types/address_type'
 
-module InvoiceBr
-
-  class Person < StructBase
-    TaxCodeEnum = Types::Strict::Int.enum(1, 2, 3) | Types::Strict::String.enum('1', '2', '3')
-    StateRegistrationIndicatorEnum = Types::Strict::Int.enum(1, 2, 9) | Types::Strict::String.enum('1', '2', '9')
+module InvoiceBr::Model
+  class Person < Base
+    TaxCodeEnum = InvoiceBr::Types::Strict::Int.enum(1, 2, 3) | InvoiceBr::Types::Strict::String.enum('1', '2', '3')
+    StateRegistrationIndicatorEnum = InvoiceBr::Types::Strict::Int.enum(1, 2, 9) | InvoiceBr::Types::Strict::String.enum('1', '2', '9')
 
     # @!attribute address
     #   Address of person.
@@ -20,7 +19,7 @@ module InvoiceBr
     #
     #   @return [Address]
     #
-    attribute :address,  AddressType.optional.default( Address.new )
+    attribute :address,  InvoiceBr::Types::Address.optional.default( Address.new )
 
     # @!attribute name
     #   Name or Company Name.
@@ -35,7 +34,7 @@ module InvoiceBr
     #
     #   @return [String]
     #
-    attribute :name, Types::Strict::String.optional.default(nil)
+    attribute :name, InvoiceBr::Types::Strict::String.optional.default(nil)
 
     # @!attribute cpf_cnpj
     #   Social security or corporate taxpayer registry.
@@ -51,7 +50,7 @@ module InvoiceBr
     #
     #   @return [String]
     #
-    attribute :cpf_cnpj, Types::Strict::String.optional.default(nil)
+    attribute :cpf_cnpj, InvoiceBr::Types::Strict::String.optional.default(nil)
 
     # @!attribute trading_name
     #   Company trading name. Usend only when the person is a legal person.
@@ -67,7 +66,7 @@ module InvoiceBr
     #
     #   @return [String]
     #
-    attribute :trading_name, Types::Strict::String.optional.default(nil)
+    attribute :trading_name, InvoiceBr::Types::Strict::String.optional.default(nil)
 
     # @!attribute phone
     #   Phone of person.
@@ -82,7 +81,7 @@ module InvoiceBr
     #
     #   @return [String]
     #
-    attribute :phone, Types::Strict::String.optional.default(nil)
+    attribute :phone, InvoiceBr::Types::Strict::String.optional.default(nil)
 
     # @!attribute mail
     #   Mail of person.
@@ -97,7 +96,7 @@ module InvoiceBr
     #
     #   @return [String]
     #
-    attribute :mail, Types::Strict::String.optional.default(nil)
+    attribute :mail, InvoiceBr::Types::Strict::String.optional.default(nil)
 
     # @!attribute tax_code
     #   Company tax code.
@@ -153,7 +152,7 @@ module InvoiceBr
     #
     #   @return [String]
     #
-    attribute :state_registration, Types::Strict::String.optional.default(nil)
+    attribute :state_registration, InvoiceBr::Types::Strict::String.optional.default(nil)
 
     # @!attribute municipal_registration
     #   Company municipal registration.
@@ -168,7 +167,7 @@ module InvoiceBr
     #
     #   @return [String]
     #
-    attribute :municipal_registration, Types::Strict::String.optional.default(nil)
+    attribute :municipal_registration, InvoiceBr::Types::Strict::String.optional.default(nil)
 
     # @!attribute suframa_registration
     #   Company suframa registration.
@@ -190,7 +189,7 @@ module InvoiceBr
     #
     #   @return [String]
     #
-    attribute :suframa_registration, Types::Strict::String.optional.default(nil)
+    attribute :suframa_registration, InvoiceBr::Types::Strict::String.optional.default(nil)
 
     # @!attribute special_tax_regime
     #   Special tax regime.
@@ -211,7 +210,7 @@ module InvoiceBr
     #
     #   @return [Integer]
     #
-    attribute :special_tax_regime, Types::Coercible::Int.optional.default(nil)
+    attribute :special_tax_regime, InvoiceBr::Types::Coercible::Int.optional.default(nil)
 
 
     # @!attribute fiscal_incentive_indicator
@@ -229,7 +228,7 @@ module InvoiceBr
     #
     #   @return [Boolean]
     #
-    attribute :fiscal_incentive_indicator, Types::Form::Bool.optional.default(nil)
+    attribute :fiscal_incentive_indicator, InvoiceBr::Types::Form::Bool.optional.default(nil)
 
     # Helping to know if the company is opting for the simple national.
     # @return [Boolean]

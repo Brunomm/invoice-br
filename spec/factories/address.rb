@@ -1,7 +1,7 @@
 FactoryBot.define do
-  factory :address, class: InvoiceBr::Address do
+  factory :address, class: InvoiceBr::Model::Address do
     initialize_with do
-      InvoiceBr::Address.new({
+      InvoiceBr::Model::Address.new({
         description:    FFaker::AddressBR.full_address,
         street:         FFaker::AddressBR.street,
         number:         FFaker::AddressBR.building_number,

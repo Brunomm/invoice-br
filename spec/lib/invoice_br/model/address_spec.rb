@@ -3,12 +3,12 @@
 
 require 'spec_helper'
 
-describe InvoiceBr::Address do
+describe InvoiceBr::Model::Address do
   let(:address) { build(:address, description: 'ok') }
 
   describe 'Attributes' do
     context 'Default values' do
-      let(:address) { InvoiceBr::Address.new  }
+      let(:address) { InvoiceBr::Model::Address.new  }
       it 'country_code' do
         expect( address.country_code ).to eq(1058)
       end
@@ -25,7 +25,7 @@ describe InvoiceBr::Address do
   end
 
   describe '#is_present?' do
-    let(:empty_address) { InvoiceBr::Address.new }
+    let(:empty_address) { InvoiceBr::Model::Address.new }
     context 'returns true when' do
       it 'principal params is embty' do
         expect( empty_address.is_present? ).to eq( false )

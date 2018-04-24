@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 # encoding: utf-8
 
-module InvoiceBr
-  class Address < StructBase
+module InvoiceBr::Model
+  class Address < Base
     # @!attribute description
     #   Full description for address.
     #
@@ -17,7 +17,7 @@ module InvoiceBr
     #
     #   @return [String]
     #
-    attribute :description, Types::Strict::String.optional.default(nil)
+    attribute :description, InvoiceBr::Types::Strict::String.optional.default(nil)
 
     # @!attribute street
     #   Street.
@@ -32,7 +32,7 @@ module InvoiceBr
     #
     #   @return [String]
     #
-    attribute :street, Types::Strict::String.optional.default(nil)
+    attribute :street, InvoiceBr::Types::Strict::String.optional.default(nil)
 
     # @!attribute number
     #   Address number.
@@ -47,7 +47,7 @@ module InvoiceBr
     #
     #   @return [String]
     #
-    attribute :number, Types::Coercible::String.optional.default(nil)
+    attribute :number, InvoiceBr::Types::Coercible::String.optional.default(nil)
 
     # @!attribute number
     #   Address Complement.
@@ -62,7 +62,7 @@ module InvoiceBr
     #
     #   @return [String]
     #
-    attribute :complement, Types::Strict::String.optional.default(nil)
+    attribute :complement, InvoiceBr::Types::Strict::String.optional.default(nil)
 
     # @!attribute neighborhood
     #   Address neighborhood.
@@ -77,7 +77,7 @@ module InvoiceBr
     #
     #   @return [String]
     #
-    attribute :neighborhood, Types::Strict::String.optional.default(nil)
+    attribute :neighborhood, InvoiceBr::Types::Strict::String.optional.default(nil)
 
     # @!attribute city
     #   City name.
@@ -92,7 +92,7 @@ module InvoiceBr
     #
     #   @return [String]
     #
-    attribute :city, Types::Strict::String.optional.default(nil)
+    attribute :city, InvoiceBr::Types::Strict::String.optional.default(nil)
 
     # @!attribute ibge_city_code
     #   IBGE City code.
@@ -108,7 +108,7 @@ module InvoiceBr
     #
     #   @return [Integer]
     #
-    attribute :ibge_city_code, Types::Coercible::Int.optional.default(nil)
+    attribute :ibge_city_code, InvoiceBr::Types::Coercible::Int.optional.default(nil)
 
     # @!attribute uf
     #   State abbr.
@@ -123,7 +123,7 @@ module InvoiceBr
     #
     #   @return [String]
     #
-    attribute :uf, Types::Strict::String.optional.default(nil)
+    attribute :uf, InvoiceBr::Types::Strict::String.optional.default(nil)
 
     # @!attribute zip_code
     #   Zip code.
@@ -139,7 +139,7 @@ module InvoiceBr
     #
     #   @return [String]
     #
-    attribute :zip_code, Types::Coercible::String.optional.default(nil)
+    attribute :zip_code, InvoiceBr::Types::Coercible::String.optional.default(nil)
 
     # @!attribute country_code
     #   Country code.
@@ -157,7 +157,7 @@ module InvoiceBr
     #
     #   @return [Integer]
     #
-    attribute :country_code, Types::Coercible::Int.optional.default(1058)
+    attribute :country_code, InvoiceBr::Types::Coercible::Int.optional.default(1058)
 
     # @!attribute country_name
     #   Country name.
@@ -175,7 +175,7 @@ module InvoiceBr
     #
     #   @return [String]
     #
-    attribute :country_name, Types::Strict::String.optional.default('BRASIL')
+    attribute :country_name, InvoiceBr::Types::Strict::String.optional.default('BRASIL')
 
 
     # Returns the first 2 characters of the {#ibge_city_code}
