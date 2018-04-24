@@ -22,7 +22,7 @@ Gem::Specification.new do |gem|
   gem.required_ruby_version = ['>= 2.2.2', '< 2.5.0']
 
   gem.add_dependency "rake", '~> 10'
-  gem.add_dependency 'i18n', '~> 0'
+  gem.add_dependency 'i18n', '>= 0.6.6'
   gem.add_dependency 'activesupport', '>= 3', '<= 5.2'
   # gem.add_dependency "nokogiri", "~> 1.6"
   # gem.add_dependency "savon", "~> 2.11"
